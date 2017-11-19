@@ -3,6 +3,7 @@ GEM
   specs:
     archive-zip (0.7.0)
       io-like (~> 0.3.0)
+    byebug (9.1.0)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.1.0)
@@ -24,6 +25,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   chromedriver-helper
   watir (~> 6.9)
 
