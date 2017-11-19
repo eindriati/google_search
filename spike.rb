@@ -1,13 +1,15 @@
 require 'watir'
 require 'byebug'
 
+search_term = "python language"
+
 browser = Watir::Browser.new
 
 browser.goto 'google.com'
 
 
 
-browser.text_field(name: "q").set "ruby code"
+browser.text_field(name: "q").set search_term
 # browser.button(name: "btnK").click
 
 browser.text_field(name: "q").send_keys :enter
