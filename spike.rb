@@ -1,24 +1,24 @@
 require 'watir'
 require 'byebug'
 
-search_term = "python language"
+def search_for_term(browser, term)
+  browser.goto 'google.com'
+  browser.text_field(name: "q").set term
+  browser.text_field(name: "q").send_keys :enter
+  first_div = browser.divs(class: "g")[0]
+  first_link = first_div.links[1].href
+  puts "First result URL: #{first_link}"
+end
 
 browser = Watir::Browser.new
 
-browser.goto 'google.com'
+search_for_term(browser, "python language")
+
+search_for_term(browser, "ruby language")
 
 
 
-browser.text_field(name: "q").set search_term
-# browser.button(name: "btnK").click
 
-browser.text_field(name: "q").send_keys :enter
-
-first_div = browser.divs(class: "g")[0]
-first_link = first_div.links[1].href
-
-
-puts "First result URL: #{first_link}"
 
 
 # byebug
